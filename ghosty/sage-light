@@ -1,0 +1,42 @@
+# Sage Light
+# Concept: realistic gray + active hopeful green (light mode)
+# Gray = life isn't black and white; Green = action creates change
+
+background = #EEEEEA
+foreground = #2A2D2B
+cursor-color = #1E5A14
+cursor-text = #EEEEEA
+selection-background = #C2D9BA
+selection-foreground = #2A2D2B
+
+# Black
+palette = 0=#2A2D2B
+palette = 8=#424644
+
+# Red
+palette = 1=#A84848
+palette = 9=#BC5C5C
+
+# Green (deep vivid)
+palette = 2=#1E5A14
+palette = 10=#146010
+
+# Yellow (rich amber)
+palette = 3=#6A4A00
+palette = 11=#5A3A00
+
+# Blue (deep steel)
+palette = 4=#1E4A70
+palette = 12=#143A60
+
+# Magenta (rich purple)
+palette = 5=#6A2860
+palette = 13=#7A3870
+
+# Cyan (deep teal)
+palette = 6=#0E5A4A
+palette = 14=#004A3A
+
+# White
+palette = 7=#C8C8C4
+palette = 15=#EEEEEA
