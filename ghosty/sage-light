@@ -2,20 +2,20 @@
 # Concept: realistic gray + active hopeful green (light mode)
 # Gray = life isn't black and white; Green = action creates change
 
-background = #EEEEEA
-foreground = #2A2D2B
+background = #F0ECE8
+foreground = #3A5A40
 cursor-color = #1E5A14
-cursor-text = #EEEEEA
+cursor-text = #F0ECE8
 selection-background = #C2D9BA
-selection-foreground = #2A2D2B
+selection-foreground = #3A5A40
 
 # Black
-palette = 0=#2A2D2B
-palette = 8=#424644
+palette = 0=#DDE2DA
+palette = 8=#5E645F
 
 # Red
 palette = 1=#A84848
-palette = 9=#BC5C5C
+palette = 9=#B83C3C
 
 # Green (deep vivid)
 palette = 2=#1E5A14
@@ -38,5 +38,5 @@ palette = 6=#0E5A4A
 palette = 14=#004A3A
 
 # White
-palette = 7=#C8C8C4
-palette = 15=#EEEEEA
+palette = 7=#2E5C56
+palette = 15=#F0ECE8

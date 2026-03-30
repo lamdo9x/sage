@@ -11,10 +11,10 @@ selection-foreground = #D0D0CC
 
 # Black
 palette = 0=#1C1F1E
-palette = 8=#4A4E4C
+palette = 8=#828A84
 
 # Red
-palette = 1=#B86060
+palette = 1=#C86C6C
 palette = 9=#CC7070
 
 # Green (vivid sage)
