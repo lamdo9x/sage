@@ -2,41 +2,41 @@
 # Concept: realistic gray + active hopeful green (dark mode)
 # Gray = life isn't black and white; Green = action creates change
 
-background = #1C1F1E
-foreground = #D0D0CC
-cursor-color = #90D474
-cursor-text = #1C1F1E
-selection-background = #2C3E2E
-selection-foreground = #D0D0CC
+background = #1C1C1E
+foreground = #D8DDD9
+cursor-color = #4ADE80
+cursor-text = #1C1C1E
+selection-background = #1E3C22
+selection-foreground = #D8DDD9
 
 # Black
-palette = 0=#1C1F1E
-palette = 8=#828A84
+palette = 0=#2A2A2C
+palette = 8=#6A726C
 
 # Red
-palette = 1=#C86C6C
-palette = 9=#CC7070
+palette = 1=#E06060
+palette = 9=#F07070
 
-# Green (vivid sage)
-palette = 2=#90D474
-palette = 10=#A0E084
+# Green (minty sage — Scalar dark level)
+palette = 2=#4ADE80
+palette = 10=#6AEE98
 
-# Yellow (warm gold)
-palette = 3=#D4B46A
-palette = 11=#D4A04A
+# Yellow / Orange (Scalar orange)
+palette = 3=#E07820
+palette = 11=#F08C30
 
-# Blue (muted steel)
-palette = 4=#6C98B4
-palette = 12=#7CA8C4
+# Blue (vivid steel)
+palette = 4=#60AAEE
+palette = 12=#70BAFF
 
-# Magenta (dusty purple)
-palette = 5=#C08AB0
-palette = 13=#CA94BA
+# Magenta (vivid purple)
+palette = 5=#C080C0
+palette = 13=#D090D0
 
-# Cyan (teal)
-palette = 6=#5A9C90
-palette = 14=#6AACA0
+# Cyan (vivid teal)
+palette = 6=#50C8A8
+palette = 14=#60D8B8
 
 # White
 palette = 7=#9A9E9C
-palette = 15=#D0D0CC
+palette = 15=#D8DDD9
