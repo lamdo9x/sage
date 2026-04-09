@@ -8,8 +8,8 @@ Gray + green. Realistic but hopeful — life isn't black and white, and the futu
 
 - **Gray** — neutral base, no absolutes
 - **Sage green** — the accent; action, growth, agency
-- Light mode: warm off-white background, deep green accents
-- Dark mode: dark gray-green background, vivid green accents
+- Light mode: neutral gray background, vivid sage green accents
+- Dark mode: deep neutral dark background, vivid sage green accents
 
 ## Install
 
