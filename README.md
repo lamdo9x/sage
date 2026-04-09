@@ -7,9 +7,9 @@ Gray + green. Realistic but hopeful — life isn't black and white, and the futu
 ## Palette
 
 - **Gray** — neutral base, no absolutes
-- **Sage green** — the accent; action, growth, agency
-- Light mode: neutral gray background, vivid sage green accents
-- Dark mode: deep neutral dark background, vivid sage green accents
+- **Sage green** — two tiers:
+  - Muted sage (`#7D9E8A` dark / `#8C9E97` light) — UI chrome: borders, selection, active line
+  - Bright green (`#4ADE80` dark / `#10A868` light) — syntax keywords, success, git added
 
 ## Install
 
