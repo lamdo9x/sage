@@ -51,9 +51,12 @@ echo "  Applied: codespan bold"
 
 # 5. User message text color → near-black (dark on sage green background)
 #    Default "text" token is white in dark mode → unreadable on light sage bg
-sudo sed -i '' 's/q\[21\]!==K)D=W\$\.createElement(T,{color:"text"},K)/q[21]!==K)D=W$.createElement(T,{color:"rgb(30,30,30)"},K)/' "$CLI"
+#    a. Main user text in message box (1 occurrence)
+sudo sed -i '' 's/createElement(V,{color:"text"},_)/createElement(V,{color:"rgb(30,30,30)"},_)/' "$CLI"
+#    b. Brief layout user text (1 occurrence)
+sudo sed -i '' 's/?"subtle":"text"/?"subtle":"rgb(30,30,30)"/' "$CLI"
+#    c. Rainbow text plain segments
 sudo sed -i '' 's/key:`plain-\${P}`,color:"text"}/key:`plain-${P}`,color:"rgb(30,30,30)"}/' "$CLI"
-sudo sed -i '' 's/Z=Y?"subtle":"text",G;if/Z=Y?"subtle":"rgb(30,30,30)",G;if/' "$CLI"
 echo "  Applied: user message text → near-black"
 
 echo ""
