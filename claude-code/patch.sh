@@ -49,14 +49,6 @@ sudo sed -i '' \
   "$CLI"
 echo "  Applied: codespan bold"
 
-# 5. Diff removed colors (fix invisible on light background)
-sudo sed -i '' 's/diffRemoved:"rgb(255,204,204)"/diffRemoved:"rgb(210,100,110)"/g' "$CLI"
-sudo sed -i '' 's/diffRemovedDimmed:"rgb(255,233,233)"/diffRemovedDimmed:"rgb(160,60,70)"/g' "$CLI"
-sudo sed -i '' 's/diffRemovedDimmed:"rgb(253,210,216)"/diffRemovedDimmed:"rgb(140,50,60)"/g' "$CLI"
-sudo sed -i '' 's/diffAddedDimmed:"rgb(199,225,203)"/diffAddedDimmed:"rgb(80,120,90)"/g' "$CLI"
-sudo sed -i '' 's/diffAddedDimmed:"rgb(209,231,253)"/diffAddedDimmed:"rgb(70,100,130)"/g' "$CLI"
-echo "  Applied: diff colors → readable on light bg"
-
 echo ""
 echo "Done. Restart Claude Code to apply."
 echo "Note: Ghosty minimum-contrast = 1.15 handles dim text readability."
