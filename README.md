@@ -1,6 +1,6 @@
 # Sage
 
-A color theme for Zed and Ghostty.
+A color theme for Zed, Ghostty, and Claude Code.
 
 Gray + green. Realistic but hopeful — life isn't black and white, and the future changes based on what you do.
 
@@ -30,6 +30,14 @@ cd ghosty && bash install.sh
 
 Copies `sage-light` and `sage-dark` to `~/.config/ghostty/themes/` and sets `theme = light:sage-light,dark:sage-dark` in your Ghostty config.
 
+### Claude Code
+
+```bash
+cd claude-code && bash patch.sh
+```
+
+Patches the Claude Code CLI to render with sage green as the background color.
+
 ---
 
-Both themes follow your system light/dark mode automatically.
+Zed and Ghostty themes follow your system light/dark mode automatically.
