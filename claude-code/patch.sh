@@ -49,6 +49,13 @@ sudo sed -i '' \
   "$CLI"
 echo "  Applied: codespan bold"
 
+# 5. User message text color → near-black (dark on sage green background)
+#    Default "text" token is white in dark mode → unreadable on light sage bg
+sudo sed -i '' 's/q\[21\]!==K)D=W\$\.createElement(T,{color:"text"},K)/q[21]!==K)D=W$.createElement(T,{color:"rgb(30,30,30)"},K)/' "$CLI"
+sudo sed -i '' 's/key:`plain-\${P}`,color:"text"}/key:`plain-${P}`,color:"rgb(30,30,30)"}/' "$CLI"
+sudo sed -i '' 's/Z=Y?"subtle":"text",G;if/Z=Y?"subtle":"rgb(30,30,30)",G;if/' "$CLI"
+echo "  Applied: user message text → near-black"
+
 echo ""
 echo "Done. Restart Claude Code to apply."
 echo "Note: Ghosty minimum-contrast = 1.15 handles dim text readability."
