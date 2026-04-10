@@ -16,12 +16,23 @@ sudo cp "$CLI" "$CLI.bak"
 echo "  Backed up cli.js.bak"
 
 # 1. Command/skill highlight background (userMessageBackground)
-#    dark: rgb(55, 55, 55) → sage light #BDD0C2
-#    hover: rgb(70, 70, 70) → slightly lighter sage
+#    Patch all theme variants: light (wL_), dark default (JL_), dark-daltonized (XL_)
+#    Original dark: rgb(55, 55, 55); original light: rgb(245, 245, 245) or similar
+#    → sage light #BDD0C2 for all themes
 sudo sed -i '' \
   's/"rgb(55, 55, 55)"/"rgb(189, 208, 194)"/g; s/"rgb(70, 70, 70)"/"rgb(200, 218, 206)"/g' \
   "$CLI"
-echo "  Applied: command highlight → sage (#BDD0C2)"
+# Also patch dark-theme-specific values (in case of prior deep-green patch or fresh install variant)
+sudo sed -i '' \
+  's/userMessageBackground:"rgb(24, 56, 38)"/userMessageBackground:"rgb(189, 208, 194)"/g' \
+  "$CLI"
+sudo sed -i '' \
+  's/userMessageBackgroundHover:"rgb(44, 76, 58)"/userMessageBackgroundHover:"rgb(200, 218, 206)"/g' \
+  "$CLI"
+sudo sed -i '' \
+  's/userMessageBackgroundHover:"rgb(34, 66, 48)"/userMessageBackgroundHover:"rgb(200, 218, 206)"/g' \
+  "$CLI"
+echo "  Applied: command highlight → sage (#BDD0C2) [all themes]"
 
 # 2. Inline code / codespan (permission color)
 #    Original blues → sage green (#34A85F dark, #10A868 light)
