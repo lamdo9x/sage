@@ -19,7 +19,7 @@ palette = 9=#F04040
 
 # Green (medium vivid — Scalar-level)
 palette = 2=#10A868
-palette = 10=#12C078
+palette = 10=#0D8A50
 
 # Yellow (bright amber)
 palette = 3=#C07800
@@ -39,4 +39,4 @@ palette = 14=#0AB08A
 
 # White
 palette = 7=#515151
-palette = 15=#F0F0F0
+palette = 15=#363737

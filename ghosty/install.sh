@@ -14,6 +14,7 @@ echo "Installed sage-light and sage-dark to $GHOSTTY_THEMES_DIR"
 # Apply theme in Ghostty config (replace existing theme line if present)
 GHOSTTY_CONFIG="$HOME/.config/ghostty/config"
 THEME_LINE="theme = light:sage-light,dark:sage-dark"
+CONTRAST_LINE="minimum-contrast = 1.15"
 if [ -f "$GHOSTTY_CONFIG" ]; then
     if grep -q "^theme" "$GHOSTTY_CONFIG"; then
         sed -i '' "s|^theme.*|$THEME_LINE|" "$GHOSTTY_CONFIG"
@@ -22,9 +23,14 @@ if [ -f "$GHOSTTY_CONFIG" ]; then
         echo "$THEME_LINE" >> "$GHOSTTY_CONFIG"
         echo "Applied theme in $GHOSTTY_CONFIG"
     fi
+    if grep -q "^minimum-contrast" "$GHOSTTY_CONFIG"; then
+        sed -i '' "s|^minimum-contrast.*|$CONTRAST_LINE|" "$GHOSTTY_CONFIG"
+    else
+        echo "$CONTRAST_LINE" >> "$GHOSTTY_CONFIG"
+    fi
 else
     mkdir -p "$(dirname "$GHOSTTY_CONFIG")"
-    echo "$THEME_LINE" > "$GHOSTTY_CONFIG"
+    printf "%s\n%s\n" "$THEME_LINE" "$CONTRAST_LINE" > "$GHOSTTY_CONFIG"
     echo "Created $GHOSTTY_CONFIG with theme applied"
 fi
 
