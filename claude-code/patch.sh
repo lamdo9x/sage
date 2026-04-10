@@ -57,16 +57,6 @@ sudo sed -i '' 's/diffAddedDimmed:"rgb(199,225,203)"/diffAddedDimmed:"rgb(80,120
 sudo sed -i '' 's/diffAddedDimmed:"rgb(209,231,253)"/diffAddedDimmed:"rgb(70,100,130)"/g' "$CLI"
 echo "  Applied: diff colors → readable on light bg"
 
-# 6. Disable ANSI dim on diff context lines
-#    Ghostty minimum-contrast handles readability instead
-sudo sed -i '' 's/dimColor:_||M==="nochange"/dimColor:!1/g' "$CLI"
-sudo sed -i '' 's/backgroundColor:x,dimColor:_/backgroundColor:x,dimColor:!1/g' "$CLI"
-sudo sed -i '' 's/backgroundColor:B,dimColor:_/backgroundColor:B,dimColor:!1/g' "$CLI"
-sudo sed -i '' 's/createElement(CA4,{patch:_,dim:z,width:O})/createElement(CA4,{patch:_,dim:!1,width:O})/g' "$CLI"
-sudo sed -i '' 's/createElement(IK,{key:w.length,dimColor:_}/createElement(IK,{key:w.length,dimColor:!1}/g' "$CLI"
-sudo sed -i '' 's/createElement(T,{color:\$,dimColor:_}/createElement(T,{color:$,dimColor:!1}/g' "$CLI"
-sudo sed -i '' 's/dimColor:_,highlight:z}=A,\[Y\]=H7();BZ8()/dimColor:_,highlight:z}=A,[Y]=H7();_=!1;BZ8()/' "$CLI"
-echo "  Applied: disable ANSI dim in diff view"
-
 echo ""
 echo "Done. Restart Claude Code to apply."
+echo "Note: Ghosty minimum-contrast = 1.15 handles dim text readability."
