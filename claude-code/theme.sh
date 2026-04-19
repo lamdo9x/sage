@@ -62,12 +62,13 @@ echo "  Applied: codespan bold"
 
 # 5. User message text color → near-black (dark on sage green background)
 #    Default "text" token is white in dark mode → unreadable on light sage bg
-#    a. Main user text in message box (1 occurrence)
-sudo sed -i '' 's/createElement(V,{color:"text"},_)/createElement(V,{color:"rgb(30,30,30)"},_)/' "$CLI"
-#    b. Brief layout user text (1 occurrence)
-sudo sed -i '' 's/?"subtle":"text"/?"subtle":"rgb(30,30,30)"/' "$CLI"
-#    c. Rainbow text plain segments
-sudo sed -i '' 's/key:`plain-\${P}`,color:"text"}/key:`plain-${P}`,color:"rgb(30,30,30)"}/' "$CLI"
+#    a. Command text in highlight box (J = `/command args`)
+sudo sed -i '' 's/AG\.createElement(T,{color:"text"},J)/AG.createElement(T,{color:"rgb(30,30,30)"},J)/g' "$CLI"
+#    b. Brief layout user text
+sudo sed -i '' 's/?"subtle":"text"/?"subtle":"rgb(30,30,30)"/g' "$CLI"
+#    c. Rainbow text plain segments (variable name varies per build: try common ones)
+sudo sed -i '' 's/key:`plain-\${w}`,color:"text"}/key:`plain-${w}`,color:"rgb(30,30,30)"}/g' "$CLI"
+sudo sed -i '' 's/key:`plain-\${P}`,color:"text"}/key:`plain-${P}`,color:"rgb(30,30,30)"}/g' "$CLI"
 echo "  Applied: user message text → near-black"
 
 echo ""
