@@ -69,6 +69,14 @@ sudo sed -i '' 's/?"subtle":"text"/?"subtle":"rgb(30,30,30)"/g' "$CLI"
 #    c. Rainbow text plain segments (variable name varies per build: try common ones)
 sudo sed -i '' 's/key:`plain-\${w}`,color:"text"}/key:`plain-${w}`,color:"rgb(30,30,30)"}/g' "$CLI"
 sudo sed -i '' 's/key:`plain-\${P}`,color:"text"}/key:`plain-${P}`,color:"rgb(30,30,30)"}/g' "$CLI"
+#    d. Non-selected (history) user message display (isCurrent:!1)
+sudo sed -i '' 's/color:"text",isCurrent:!1/color:"rgb(30,30,30)",isCurrent:!1/g' "$CLI"
+#    e. Current user message display — both selected ("suggestion" muted sage) and unselected
+#       (void 0 → white) branches render badly on sage bg. Force near-black for both.
+sudo sed -i '' 's/color:t?"suggestion":void 0,isCurrent/color:"rgb(30,30,30)",isCurrent/g' "$CLI"
+#    f. vq7 fallback path: when user text has no rainbow/highlight segments, renders plain "text"
+#       token → white on sage. This is the common path for most submitted user messages.
+sudo sed -i '' 's|color:"text"},_);break q|color:"rgb(30,30,30)"},_);break q|' "$CLI"
 echo "  Applied: user message text → near-black"
 
 echo ""
