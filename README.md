@@ -33,12 +33,10 @@ Copies `sage-light` and `sage-dark` to `~/.config/ghostty/themes/` and sets `the
 ### Claude Code
 
 ```bash
-cd claude-code
-sudo bash theme.sh       # sage color theme
-sudo bash vietnamese.sh  # Vietnamese IME fix (optional)
+node claude-code/apply-theme.js
 ```
 
-Patches the Claude Code CLI to render with sage green as the background color. Re-run after updating Claude Code.
+Copies `sage-theme.json` to `~/.claude/themes/` and sets it as the active theme. Only installs if not already present. Requires Claude Code v2.1.118+.
 
 ---
 
