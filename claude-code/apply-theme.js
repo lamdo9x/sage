@@ -33,5 +33,7 @@ function setThemeConfig() {
 }
 
 ensureThemesDir();
-copyTheme();
-setThemeConfig();
+if (!fs.existsSync(DEST)) {
+  copyTheme();
+  setThemeConfig();
+}
