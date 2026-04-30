@@ -1,5 +1,5 @@
 {
-  "name": "Sage",
+  "name": "Sage Light",
   "base": "light",
   "overrides": {
     "claude": "rgb(52, 168, 95)",

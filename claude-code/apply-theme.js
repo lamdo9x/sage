@@ -1,11 +1,29 @@
 #!/usr/bin/env node
 const fs = require("fs");
 const path = require("path");
+const { execSync } = require("child_process");
 
-const SOURCE = path.join(__dirname, "sage-theme.json");
 const THEMES_DIR = path.join(process.env.HOME, ".claude", "themes");
 const DEST = path.join(THEMES_DIR, "sage.json");
 const CLAUDE_JSON = path.join(process.env.HOME, ".claude.json");
+
+function isDarkMode() {
+  try {
+    const result = execSync("defaults read -g AppleInterfaceStyle 2>/dev/null", {
+      encoding: "utf8",
+      stdio: ["pipe", "pipe", "pipe"],
+    }).trim();
+    return result === "Dark";
+  } catch {
+    return false;
+  }
+}
+
+function getSourceTheme() {
+  const variant = isDarkMode() ? "dark" : "light";
+  const src = path.join(__dirname, `sage-${variant}.json`);
+  return { src, variant };
+}
 
 function ensureThemesDir() {
   if (!fs.existsSync(THEMES_DIR)) {
@@ -14,9 +32,10 @@ function ensureThemesDir() {
   }
 }
 
-function copyTheme() {
-  fs.writeFileSync(DEST, fs.readFileSync(SOURCE, "utf8"));
-  console.log("  Installed sage theme");
+function syncTheme() {
+  const { src, variant } = getSourceTheme();
+  fs.writeFileSync(DEST, fs.readFileSync(src, "utf8"));
+  console.log(`  Installed sage theme (${variant} mode)`);
 }
 
 function setThemeConfig() {
@@ -33,7 +52,5 @@ function setThemeConfig() {
 }
 
 ensureThemesDir();
-if (!fs.existsSync(DEST)) {
-  copyTheme();
-  setThemeConfig();
-}
+syncTheme();
+setThemeConfig();
